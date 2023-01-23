@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\AnkiConnect.NET\src\AnkiConnect.Net\AnkiConnect.Net.csproj" />
-  </ItemGroup>
-
 </Project>

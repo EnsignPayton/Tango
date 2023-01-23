@@ -1,23 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Net.Http.Headers;
+using System.Text.Json;
 
-// 1. Grab Anki vocab cards
-// 2. Group by words
-// 3. Select most advanced card per word
-// 4. Translate each to a knowledge factor
-// 5. Display count of words with a knowledge factor over some threshold
+var apiToken = args[0];
+Console.WriteLine("Reading from WaniKani using API Key: " + apiToken);
 
-var cards = Enumerable.Empty<dynamic>();
+using var client = new HttpClient();
+client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiToken);
 
-const float threshold = 1.0f;
+var assignmentsResponse = await client.GetStringAsync("https://api.wanikani.com/v2/assignments?started=true&subject_types=vocabulary");
 
-var knownWordCount = cards
-    .GroupBy(c => c.Word)
-    .Select(w => w
-        .Where(c => !c.IsSuspended)
-        .MaxBy(c => c.Interval)?
-        .Interval
-        .ToFactor() ?? 0)
-    .Count(f => f >= threshold);
+var assignmentsJson = JsonSerializer.Deserialize<JsonDocument>(assignmentsResponse);
+var count = assignmentsJson!.RootElement.GetProperty("total_count").GetInt32();
 
-Console.WriteLine($"You know {knownWordCount} words");
+Console.WriteLine($"You know {count} words in WaniKani");
+
+Console.ReadKey();
