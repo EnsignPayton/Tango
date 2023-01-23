@@ -1,0 +1,3 @@
+[submodule "submodules/AnkiConnect.Net"]
+	path = submodules/AnkiConnect.Net
+	url = git@github.com:EnsignPayton/AnkiConnect.Net.git

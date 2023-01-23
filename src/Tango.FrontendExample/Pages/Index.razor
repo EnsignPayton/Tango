@@ -1,0 +1,18 @@
+﻿@page "/"
+@inject VocabManager VM
+
+<PageTitle>Index</PageTitle>
+
+<h1>You know @VM.Words.Count words.</h1>
+
+<ul>
+    @foreach (var word in VM.Words)
+    {
+        <li>@word.Value</li>
+    }
+</ul>
+
+
+
+
+
