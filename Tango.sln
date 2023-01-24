@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tango", "Tango.csproj", "{FCC3BF98-C6B5-41FD-87C4-D7593A940E52}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5EDD5D5B-F224-4DA2-A2A8-070D9BAEC321}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tango.Demo", "src\Tango.Demo\Tango.Demo.csproj", "{CF18D94E-E537-4617-923D-6A474EE46DE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tango.Api", "src\Tango.Api\Tango.Api.csproj", "{9EA02C44-62F8-4024-9B4B-D46ED0790234}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +18,17 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FCC3BF98-C6B5-41FD-87C4-D7593A940E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCC3BF98-C6B5-41FD-87C4-D7593A940E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCC3BF98-C6B5-41FD-87C4-D7593A940E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCC3BF98-C6B5-41FD-87C4-D7593A940E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF18D94E-E537-4617-923D-6A474EE46DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF18D94E-E537-4617-923D-6A474EE46DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF18D94E-E537-4617-923D-6A474EE46DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF18D94E-E537-4617-923D-6A474EE46DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EA02C44-62F8-4024-9B4B-D46ED0790234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EA02C44-62F8-4024-9B4B-D46ED0790234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EA02C44-62F8-4024-9B4B-D46ED0790234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EA02C44-62F8-4024-9B4B-D46ED0790234}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF18D94E-E537-4617-923D-6A474EE46DE0} = {5EDD5D5B-F224-4DA2-A2A8-070D9BAEC321}
+		{9EA02C44-62F8-4024-9B4B-D46ED0790234} = {5EDD5D5B-F224-4DA2-A2A8-070D9BAEC321}
 	EndGlobalSection
 EndGlobal

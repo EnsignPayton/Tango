@@ -1,0 +1,34 @@
+### 01 Get "Hello World!"
+GET http://localhost:5161/
+
+### 02 Get all words
+GET http://localhost:5161/words
+
+### 03 Get total word count
+GET http://localhost:5161/words/count
+
+### 04 Get count of words known 50% or more
+GET http://localhost:5161/words/count?threshold=0.5
+
+### 05 Add a custom word
+POST http://localhost:5161/words/custom
+Content-Type: application/json
+
+{
+  "value": "six",
+  "factor": 0.9
+}
+
+### 06 Delete a word
+DELETE http://localhost:5161/words?value=three
+
+###
+# TODO
+# Get details for a word, including the sources it came from
+# Get source configuration, if applicable
+
+# Add a word with a WaniKani source, specifying srs progress data
+# Add a word with an Anki vocab card source, specifying srs progress data
+
+# Update integrated with add or separate?
+# Batch update for WaniKani/Anki integration?
