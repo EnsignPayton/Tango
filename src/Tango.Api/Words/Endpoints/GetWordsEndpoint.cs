@@ -1,6 +1,5 @@
 using Tango.Api.Common;
 using Tango.Api.Words.Repository;
-using Tango.Api.Words.Requests;
 using Tango.Api.Words.Responses;
 
 namespace Tango.Api.Words.Endpoints;
@@ -23,7 +22,7 @@ public class GetWordsEndpoint : IEndpoint
 
     public static void Register(IEndpointRouteBuilder app)
     {
-        app.MapGet("/words/{value}", (GetWordEndpoint endpoint, string value) =>
-            endpoint.HandleAsync(new GetWordRequest { Value = value }));
+        app.MapGet("/words/all", (GetWordsEndpoint endpoint) => endpoint.HandleAsync())
+            .WithName(nameof(GetWordsEndpoint));
     }
 }

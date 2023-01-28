@@ -28,6 +28,7 @@ public class GetWordCountEndpoint : IEndpoint
     public static void Register(IEndpointRouteBuilder app)
     {
         app.MapGet("/words/count", (GetWordCountEndpoint endpoint, [FromQuery] double? min) =>
-            endpoint.HandleAsync(new GetWordCountRequest { MinimumKnowledgeFactor = min ?? 0 }));
+            endpoint.HandleAsync(new GetWordCountRequest { MinimumKnowledgeFactor = min ?? 0 }))
+            .WithName(nameof(GetWordCountEndpoint));
     }
 }

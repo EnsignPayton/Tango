@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Tango.Api.Common;
 using Tango.Api.Words.Repository;
 using Tango.Api.Words.Requests;
@@ -26,6 +27,8 @@ public class GetWordEndpoint : IEndpoint
 
     public static void Register(IEndpointRouteBuilder app)
     {
-        app.MapGet("/words", (GetWordsEndpoint endpoint) => endpoint.HandleAsync());
+        app.MapGet("/words", (GetWordEndpoint endpoint, [FromQuery] string value) =>
+            endpoint.HandleAsync(new GetWordRequest { Value = value }))
+            .WithName(nameof(GetWordEndpoint));
     }
 }

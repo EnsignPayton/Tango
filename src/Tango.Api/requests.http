@@ -1,14 +1,26 @@
 ### Get all words
-GET http://localhost:5161/words
+GET http://localhost:5161/words/all
 
 ### Get specific word
-GET http://localhost:5161/words/日本
+GET http://localhost:5161/words?value=日本
 
 ### Get nonexistent word
-GET http://localhost:5161/words/foo
+GET http://localhost:5161/words?value=foo
 
 ### Get total word count
 GET http://localhost:5161/words/count
 
 ### Get count of words known 90% or more
 GET http://localhost:5161/words/count?min=0.9
+
+### Add a new custom source
+POST http://localhost:5161/words/custom
+Content-Type: application/json
+
+{
+  "value": "単語",
+  "kf": 0.8
+}
+
+### Get that custom source
+GET http://localhost:5161/words/custom?value=単語

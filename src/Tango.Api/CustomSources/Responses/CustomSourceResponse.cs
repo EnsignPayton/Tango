@@ -1,8 +1,8 @@
 using System.Text.Json.Serialization;
 
-namespace Tango.Api.Words.Responses;
+namespace Tango.Api.CustomSources.Responses;
 
-public class WordResponse
+public class CustomSourceResponse
 {
     [JsonPropertyName("value")]
     [JsonPropertyOrder(0)]
