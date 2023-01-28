@@ -1,10 +1,13 @@
-using Tango.Api;
+using Tango.Api.Common;
+using Tango.Api.Words;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddWords();
+builder.Services.AddEndpoints();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-
-app.MapDummyDemoData();
+app.AddEndpoints();
 
 app.Run();
