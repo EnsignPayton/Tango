@@ -1,9 +1,7 @@
 using System.Net.Http.Headers;
 using System.Text.Json.Nodes;
-using Tango.Api.WaniKani;
-using Tango.Api.WaniKani.Repository;
-using Tango.Api.Words;
-using Tango.Api.Words.Repository;
+using Tango.Api.Entities;
+using Tango.Api.Repository;
 
 namespace Tango.Api;
 

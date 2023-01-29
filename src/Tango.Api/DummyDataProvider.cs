@@ -1,5 +1,4 @@
-using Tango.Api.Custom.Repository;
-using Tango.Api.Words.Repository;
+using Tango.Api.Repository;
 
 namespace Tango.Api;
 
