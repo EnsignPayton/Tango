@@ -1,8 +1,10 @@
+### Queries
+
 ### Get all words
 GET http://localhost:5161/words/all
 
 ### Get specific word
-GET http://localhost:5161/words?value=日本
+GET http://localhost:5161/words?value=単語
 
 ### Get nonexistent word
 GET http://localhost:5161/words?value=foo
@@ -13,17 +15,16 @@ GET http://localhost:5161/words/count
 ### Get count of words known 90% or more
 GET http://localhost:5161/words/count?min=0.9
 
-### Add a new custom source
-POST http://localhost:5161/words/custom
-Content-Type: application/json
-
-{
-  "value": "単語",
-  "kf": 0.8
-}
-
-### Get that custom source
+### Get a custom source
 GET http://localhost:5161/words/custom?value=単語
 
 ### Get WaniKani source
 GET http://localhost:5161/words/wanikani?value=本日
+
+
+### Add a custom source
+POST http://localhost:5161/words/custom
+Content-Type: application/json
+
+{"value": "単語", "kf": 0.8}
+

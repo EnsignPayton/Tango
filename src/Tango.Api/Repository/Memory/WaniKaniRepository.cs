@@ -2,7 +2,7 @@ using Tango.Api.Entities;
 
 namespace Tango.Api.Repository.Memory;
 
-public class InMemoryWaniKaniRepository : IWaniKaniRepository
+public class WaniKaniRepository : IWaniKaniRepository
 {
     private readonly Dictionary<string, WaniKaniSource> _sources = new();
 
