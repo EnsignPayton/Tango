@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Tango.Api.Common;
-using Tango.Api.CustomSources.Repository;
-using Tango.Api.CustomSources.Requests;
+using Tango.Api.Custom.Repository;
+using Tango.Api.Custom.Requests;
 using Tango.Api.Words;
 using Tango.Api.Words.Repository;
 
-namespace Tango.Api.CustomSources.Endpoints;
+namespace Tango.Api.Custom.Endpoints;
 
 public class CreateCustomSourceEndpoint : IEndpoint
 {

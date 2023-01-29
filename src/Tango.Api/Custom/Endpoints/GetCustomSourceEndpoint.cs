@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Tango.Api.Common;
-using Tango.Api.CustomSources.Repository;
-using Tango.Api.CustomSources.Requests;
+using Tango.Api.Custom.Repository;
+using Tango.Api.Custom.Requests;
 
-namespace Tango.Api.CustomSources.Endpoints;
+namespace Tango.Api.Custom.Endpoints;
 
 public class GetCustomSourceEndpoint : IEndpoint
 {
@@ -16,12 +16,12 @@ public class GetCustomSourceEndpoint : IEndpoint
 
     public async Task<IResult> HandleAsync(GetCustomSourceRequest request)
     {
-        var customSource = await _customSourceRepository.GetAsync(request.Value);
+        var source = await _customSourceRepository.GetAsync(request.Value);
 
-        if (customSource == null)
+        if (source == null)
             return Results.NotFound();
 
-        var response = customSource.ToResponse();
+        var response = source.ToResponse();
         return Results.Ok(response);
     }
 

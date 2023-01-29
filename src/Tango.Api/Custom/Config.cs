@@ -1,11 +1,11 @@
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Tango.Api.CustomSources.Repository;
+using Tango.Api.Custom.Repository;
 
-namespace Tango.Api.CustomSources;
+namespace Tango.Api.Custom;
 
 public static class Config
 {
-    public static IServiceCollection AddCustomSources(this IServiceCollection services)
+    public static IServiceCollection AddCustom(this IServiceCollection services)
     {
         services.TryAddSingleton<ICustomSourceRepository, InMemoryCustomSourceRepository>();
         return services;

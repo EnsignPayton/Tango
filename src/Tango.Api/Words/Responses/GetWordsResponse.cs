@@ -1,6 +1,9 @@
+using System.Text.Json.Serialization;
+
 namespace Tango.Api.Words.Responses;
 
 public class GetWordsResponse
 {
-    public IEnumerable<WordResponse> Words { get; init; } = Enumerable.Empty<WordResponse>();
+    [JsonPropertyName("words")]
+    public required IEnumerable<WordResponse> Words { get; init; }
 }

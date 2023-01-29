@@ -1,6 +1,6 @@
-namespace Tango.Api.Words;
+namespace Tango.Api.Custom;
 
-public class Word
+public class CustomSource
 {
     public required string Value { get; init; }
     public required double KnowledgeFactor { get; init; }

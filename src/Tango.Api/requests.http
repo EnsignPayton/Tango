@@ -24,3 +24,6 @@ Content-Type: application/json
 
 ### Get that custom source
 GET http://localhost:5161/words/custom?value=単語
+
+### Get WaniKani source
+GET http://localhost:5161/words/wanikani?value=本日

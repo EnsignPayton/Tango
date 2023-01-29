@@ -2,23 +2,17 @@ namespace Tango.Api.Words.Repository;
 
 public class InMemoryWordRepository : IWordRepository
 {
-    private readonly Dictionary<string, Word> _words = new()
-    {
-        // Dummy test data
-        { "本", new() { Value = "本", KnowledgeFactor = 1.0 } },
-        { "日", new() { Value = "日", KnowledgeFactor = 1.0 } },
-        { "日本", new() { Value = "日本", KnowledgeFactor = 0.8 } },
-    };
+    private readonly Dictionary<string, Word> _words = new();
     
-    public Task<bool> CreateAsync(Word word)
+    public Task<bool> CreateAsync(Word value)
     {
-        _words[word.Value] = word;
+        _words[value.Value] = value;
         return Task.FromResult(true);
     }
 
-    public Task<Word?> GetAsync(string value)
+    public Task<Word?> GetAsync(string key)
     {
-        return _words.TryGetValue(value, out var result)
+        return _words.TryGetValue(key, out var result)
             ? Task.FromResult<Word?>(result)
             : Task.FromResult<Word?>(null);
     }
@@ -28,15 +22,15 @@ public class InMemoryWordRepository : IWordRepository
         return Task.FromResult(_words.Values.AsEnumerable());
     }
 
-    public Task<bool> UpdateAsync(Word word)
+    public Task<bool> UpdateAsync(Word value)
     {
-        _words[word.Value] = word;
+        _words[value.Value] = value;
         return Task.FromResult(true);
     }
 
-    public Task<bool> DeleteAsync(string value)
+    public Task<bool> DeleteAsync(string key)
     {
-        _words.Remove(value);
+        _words.Remove(key);
         return Task.FromResult(true);
     }
 

@@ -1,14 +1,14 @@
 using System.Text.Json.Serialization;
 
-namespace Tango.Api.CustomSources.Responses;
+namespace Tango.Api.Custom.Responses;
 
 public class CustomSourceResponse
 {
     [JsonPropertyName("value")]
     [JsonPropertyOrder(0)]
-    public string Value { get; init; } = default!;
+    public required string Value { get; init; }
 
     [JsonPropertyName("kf")]
     [JsonPropertyOrder(1)]
-    public double KnowledgeFactor { get; init; }
+    public required double KnowledgeFactor { get; init; }
 }

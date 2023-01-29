@@ -1,14 +1,14 @@
 using System.Text.Json.Serialization;
 
-namespace Tango.Api.Words.Responses;
+namespace Tango.Api.WaniKani.Responses;
 
-public class WordResponse
+public class WaniKaniSourceResponse
 {
     [JsonPropertyName("value")]
     [JsonPropertyOrder(0)]
     public required string Value { get; init; }
-
-    [JsonPropertyName("kf")]
+    
+    [JsonPropertyName("srs_stage")]
     [JsonPropertyOrder(1)]
-    public required double KnowledgeFactor { get; init; }
+    public required int SrsStage { get; init; }
 }
