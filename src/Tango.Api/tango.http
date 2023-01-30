@@ -19,7 +19,7 @@ GET http://localhost:5161/words/count?min=0.9
 GET http://localhost:5161/words/custom?value=単語
 
 ### Get WaniKani source
-GET http://localhost:5161/words/wanikani?value=本日
+GET http://localhost:5161/words/wanikani?value=単語
 
 
 ### Add a custom source

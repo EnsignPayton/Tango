@@ -2,7 +2,7 @@ using Dapper;
 
 namespace Tango.Api.Repository.Sqlite;
 
-public class InitializeDatabase
+public static class InitializeDatabase
 {
     public static async Task ExecuteAsync()
     {

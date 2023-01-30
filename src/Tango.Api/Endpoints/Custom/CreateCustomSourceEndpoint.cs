@@ -19,6 +19,13 @@ public class CreateCustomSourceEndpoint : IEndpoint
 
     public async Task<IResult> HandleAsync(CreateCustomSourceRequest request)
     {
+        var existingCustomSource = await _customSourceRepository.GetAsync(request.Value);
+
+        if (existingCustomSource != null)
+        {
+            return Results.Conflict();
+        }
+
         // TODO: Move or change
         var customSource = new CustomSource
         {
@@ -28,6 +35,8 @@ public class CreateCustomSourceEndpoint : IEndpoint
 
         await _customSourceRepository.CreateAsync(customSource);
 
+        var existingWord = await _wordRepository.GetAsync(request.Value);
+
         // TODO: Eventually, this will recalculate based on all sources.
         var word = new Word
         {
@@ -35,7 +44,10 @@ public class CreateCustomSourceEndpoint : IEndpoint
             KnowledgeFactor = request.KnowledgeFactor
         };
 
-        await _wordRepository.CreateAsync(word);
+        if (existingWord == null)
+            await _wordRepository.CreateAsync(word);
+        else
+            await _wordRepository.UpdateAsync(word);
 
         return Results.CreatedAtRoute(nameof(GetCustomSourceEndpoint), new { value = request.Value });
     }

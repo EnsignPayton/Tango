@@ -46,6 +46,7 @@ public class WordRepository : IWordRepository
     public async Task<int> GetCountAsync(double minFactor)
     {
         using var connection = await ConnectionProvider.CreateDbConnectionAsync();
-        return await connection.ExecuteScalarAsync<int>(@"SELECT COUNT(*) from words");
+        return await connection.ExecuteScalarAsync<int>(
+            @"SELECT COUNT(*) from words WHERE kf >= @minFactor", new { minFactor });
     }
 }
