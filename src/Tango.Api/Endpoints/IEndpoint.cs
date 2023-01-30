@@ -1,4 +1,4 @@
-namespace Tango.Api.Common;
+namespace Tango.Api.Endpoints;
 
 public interface IEndpoint
 {

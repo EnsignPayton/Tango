@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tango.Demo", "src\Tango.Dem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tango.Api", "src\Tango.Api\Tango.Api.csproj", "{9EA02C44-62F8-4024-9B4B-D46ED0790234}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tango.WaniKani", "src\Tango.WaniKani\Tango.WaniKani.csproj", "{DF0234E8-CA42-4434-B22B-80A1A0249CAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +28,14 @@ Global
 		{9EA02C44-62F8-4024-9B4B-D46ED0790234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EA02C44-62F8-4024-9B4B-D46ED0790234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EA02C44-62F8-4024-9B4B-D46ED0790234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF0234E8-CA42-4434-B22B-80A1A0249CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0234E8-CA42-4434-B22B-80A1A0249CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0234E8-CA42-4434-B22B-80A1A0249CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0234E8-CA42-4434-B22B-80A1A0249CAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CF18D94E-E537-4617-923D-6A474EE46DE0} = {5EDD5D5B-F224-4DA2-A2A8-070D9BAEC321}
 		{9EA02C44-62F8-4024-9B4B-D46ED0790234} = {5EDD5D5B-F224-4DA2-A2A8-070D9BAEC321}
+		{DF0234E8-CA42-4434-B22B-80A1A0249CAD} = {5EDD5D5B-F224-4DA2-A2A8-070D9BAEC321}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Tango.Api.Common;
 using Tango.Api.DTO.Responses;
 using Tango.Api.Mapping;
 using Tango.Api.Repository;

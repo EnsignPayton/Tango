@@ -16,14 +16,14 @@ GET http://localhost:5161/words/count
 GET http://localhost:5161/words/count?min=0.9
 
 ### Get a custom source
-GET http://localhost:5161/words/custom?value=単語
+GET http://localhost:5161/sources/custom?value=単語
 
 ### Get WaniKani source
-GET http://localhost:5161/words/wanikani?value=単語
+GET http://localhost:5161/sources/wanikani?value=口
 
 
 ### Add a custom source
-POST http://localhost:5161/words/custom
+POST http://localhost:5161/sources/custom
 Content-Type: application/json
 
 {"value": "単語", "kf": 0.8}

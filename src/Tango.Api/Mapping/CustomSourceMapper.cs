@@ -1,3 +1,4 @@
+using Tango.Api.DTO.Requests;
 using Tango.Api.DTO.Responses;
 using Tango.Api.Entities;
 
@@ -9,5 +10,11 @@ public static class CustomSourceMapper
     {
         Value = source.Value,
         KnowledgeFactor = source.KnowledgeFactor
+    };
+
+    public static CustomSource ToEntity(this CreateCustomSourceRequest request) => new()
+    {
+        Value = request.Value,
+        KnowledgeFactor = request.KnowledgeFactor
     };
 }

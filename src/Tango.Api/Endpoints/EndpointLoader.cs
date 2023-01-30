@@ -1,7 +1,7 @@
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace Tango.Api.Common;
+namespace Tango.Api.Endpoints;
 
 public static class EndpointLoader
 {

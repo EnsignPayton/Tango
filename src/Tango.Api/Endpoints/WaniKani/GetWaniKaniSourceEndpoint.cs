@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Tango.Api.Common;
 using Tango.Api.Mapping;
 using Tango.Api.Repository;
 
@@ -27,7 +26,7 @@ public class GetWaniKaniSourceEndpoint : IEndpoint
 
     public static void Register(IEndpointRouteBuilder app)
     {
-        app.MapGet("/words/wanikani", (GetWaniKaniSourceEndpoint endpoint, [FromQuery] string value) =>
+        app.MapGet("/sources/wanikani", (GetWaniKaniSourceEndpoint endpoint, [FromQuery] string value) =>
             endpoint.HandleAsync(value))
             .WithName(nameof(GetWaniKaniSourceEndpoint));
     }
